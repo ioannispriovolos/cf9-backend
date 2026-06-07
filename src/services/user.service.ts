@@ -6,5 +6,5 @@ export const createUser = async(payload: IUser) => {
     console.log("Service payload:", payload);
     const user = new User(payload);
     console.log("New user:", user);
-    return user;
+    return user.save();
 }
