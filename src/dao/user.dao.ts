@@ -11,5 +11,5 @@ export const createUser = async(data: Partial<IUser>):Promise<IUser> => {
 
 export const updateUser = async(username: string, payload: Partial<IUser>):Promise<IUser | null> => {
     
-    return await User.findOneAndUpdate({username: username}, payload, {new: true}).populate('roles').lean().exec();
+    return await User.findOneAndUpdate({username: username}, payload, {returnDocument: 'after'}).populate('roles').lean().exec();
 }
