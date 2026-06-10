@@ -16,7 +16,7 @@
   "jest": {
     "collectCoverage": true,
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules"
     ]
   },
   "dependencies": {
