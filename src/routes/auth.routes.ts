@@ -28,4 +28,7 @@ const router = Router();
  */
 router.post('/login', authCtrl.login );
 
+// Endpoint for Google login
+router.post('/google-auth', authCtrl.googleLogin);
+
 export default router;

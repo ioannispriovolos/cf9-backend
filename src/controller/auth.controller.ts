@@ -11,3 +11,15 @@ export const login = async(req: Request, res: Response, next: NextFunction) => {
         next(error);
     }
 }
+
+export const googleLogin = async(req:Request, res:Response, next:NextFunction) =>{
+    try {
+        const {token} = req.body;
+        const result = await authService.googleLogin(token);
+    if (!result) 
+        return res.status(401).json({status: false, message: result});
+    res.status(200).json({status: true, token: result.token});
+    } catch (err) {
+        next (err);
+    }
+}
